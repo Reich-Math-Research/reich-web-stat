@@ -1,5 +1,4 @@
 :root {
-    /* Academic Editorial Palette (Quanta / Clay Style) */
     --bg: #fafafa;
     --surface: #ffffff;
     --surface-2: #f4f5f7;
@@ -9,20 +8,17 @@
     --muted: #4a525a;
     --line: #d1d8e0;
 
-    /* Authoritative Academic Blue & Mathematical Crimson */
     --accent: #0f2c59;
     --accent-dark: #081d3a;
     --accent-soft: #eef3fa;
 
     --dark: #0a0f18;
     --dark-soft: #141b25;
-
-    /* Academic layout avoids heavy floating shadows; uses crisp borders instead */
+    
     --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
     --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
 
-    /* Radical shift from rounded SaaS design to sharp journal geometry */
     --radius-sm: 0px;
     --radius-md: 2px;
     --radius-lg: 3px;
@@ -43,7 +39,6 @@ body {
     min-height: 100vh;
     color: var(--text);
     background: var(--bg);
-    /* Classic publication typeface stack for maximum mathematical legibility */
     font-family: "Times New Roman", Times, Cambria, Georgia, serif;
     font-size: 1.05rem;
     line-height: 1.7;
@@ -64,7 +59,7 @@ a {
 }
 
 a:hover {
-    color: #b31b1b; /* Classic arXiv maroon tint on hover actions */
+    color: #b31b1b;
     text-decoration: underline;
 }
 
@@ -80,7 +75,6 @@ button:focus-visible {
     padding: 20px 0;
 }
 
-/* Institutional Navigation Header */
 .site-header {
     display: flex;
     justify-content: space-between;
@@ -122,10 +116,9 @@ button:focus-visible {
 }
 
 .site-nav a::after {
-    display: none; /* Removed the modern animated underline */
+    display: none;
 }
 
-/* Core Document Modules (Abstracts & Articles) */
 .hero,
 .project-hero,
 .section,
@@ -133,7 +126,7 @@ button:focus-visible {
     background: var(--surface);
     border: 1px solid var(--line);
     border-radius: var(--radius-lg);
-    box-shadow: none; /* Flat academic surface configuration */
+    box-shadow: none;
 }
 
 .hero {
@@ -142,7 +135,7 @@ button:focus-visible {
     gap: 32px;
     padding: 40px;
     margin-bottom: 30px;
-    border-top: 4px solid var(--accent); /* Formal structural accent line */
+    border-top: 4px solid var(--accent);
 }
 
 .hero-home {
