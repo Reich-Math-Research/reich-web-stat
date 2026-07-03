@@ -15,13 +15,13 @@
     --dark: #0a0f18;
     --dark-soft: #141b25;
     
-    --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.05);
-    --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
-    --shadow-lg: 0 8px 24px rgba(0, 0, 0, 0.12);
+    --shadow-sm: 0px 0px 0px transparent;
+    --shadow-md: 0px 0px 0px transparent;
+    --shadow-lg: 0px 0px 0px transparent;
 
     --radius-sm: 0px;
-    --radius-md: 2px;
-    --radius-lg: 3px;
+    --radius-md: 0px;
+    --radius-lg: 0px;
 }
 
 *,
@@ -49,7 +49,7 @@ body {
 img {
     max-width: 100%;
     display: block;
-    filter: grayscale(10%) contrast(105%);
+    filter: grayscale(20%) contrast(105%);
 }
 
 a {
@@ -69,10 +69,12 @@ button:focus-visible {
     outline-offset: 2px;
 }
 
+/* Full-width frame layout mimicking digital library repositories */
 .site-shell {
-    width: min(1200px, calc(100% - 32px));
-    margin: 0 auto;
-    padding: 20px 0;
+    width: 100%;
+    max-width: 100%;
+    margin: 0;
+    padding: 20px 48px;
 }
 
 .site-header {
@@ -81,13 +83,13 @@ button:focus-visible {
     align-items: baseline;
     gap: 18px;
     margin-bottom: 40px;
-    padding: 20px 0;
-    border-bottom: 3px double var(--line);
+    padding: 24px 0;
+    border-bottom: 4px double var(--line);
 }
 
 .brand {
     font-family: "Times New Roman", Times, Georgia, serif;
-    font-size: 1.6rem;
+    font-size: 1.8rem;
     font-weight: 700;
     letter-spacing: -0.01em;
     text-transform: uppercase;
@@ -97,7 +99,7 @@ button:focus-visible {
 .site-nav {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: 32px;
     color: var(--muted);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-size: 0.9rem;
@@ -129,11 +131,12 @@ button:focus-visible {
     box-shadow: none;
 }
 
+/* Expanded Grid tracking across wide viewports */
 .hero {
     display: grid;
-    grid-template-columns: 1.6fr 0.8fr;
-    gap: 32px;
-    padding: 40px;
+    grid-template-columns: 2fr 0.8fr;
+    gap: 48px;
+    padding: 48px;
     margin-bottom: 30px;
     border-top: 4px solid var(--accent);
 }
@@ -153,11 +156,11 @@ button:focus-visible {
 }
 
 .hero-copy h1 {
-    font-size: clamp(2.2rem, 4.5vw, 3.6rem);
+    font-size: clamp(2.4rem, 4vw, 4rem);
 }
 
 .project-hero h1 {
-    font-size: clamp(2rem, 3.5vw, 2.8rem);
+    font-size: clamp(2.2rem, 3vw, 3.2rem);
 }
 
 /* Metadata Keywords & Index Tags */
@@ -175,26 +178,26 @@ button:focus-visible {
 .eyebrow,
 .section-kicker,
 .project-kicker {
-    color: #b31b1b; /* Subject class tracking accent color */
+    color: #b31b1b; 
     display: block;
     margin-bottom: 8px;
 }
 
-/* Abstract and Lead Copy Block formatting */
+/* Abstract alignment - bound to typographic line length comfort */
 .hero-statement {
-    margin: 0 0 20px 0;
-    max-width: 68ch;
-    font-size: 1.2rem;
-    line-height: 1.65;
+    margin: 0 0 24px 0;
+    max-width: 75ch;
+    font-size: 1.25rem;
+    line-height: 1.7;
     color: var(--text);
-    font-style: italic; /* Mimics research abstract formatting */
+    font-style: italic; 
 }
 
 .hero-body {
-    max-width: 68ch;
+    max-width: 75ch;
     margin: 16px 0 0;
     color: var(--muted);
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
 .hero-body-light,
@@ -208,6 +211,7 @@ button:focus-visible {
     border-radius: var(--radius-sm);
     background: var(--surface-2);
     border: 1px solid var(--line);
+    height: max-content;
 }
 
 .portrait {
@@ -233,7 +237,7 @@ button:focus-visible {
 .fact-list li {
     padding: 8px 12px;
     background: var(--surface);
-    border-left: 3px solid var(--accent); /* Document index marker */
+    border-left: 3px solid var(--accent); 
     border-top: 1px solid var(--line);
     border-right: 1px solid var(--line);
     border-bottom: 1px solid var(--line);
@@ -241,7 +245,7 @@ button:focus-visible {
     color: var(--text);
 }
 
-/* Academic Command / Action Buttons */
+/* Action Bars */
 .button-row,
 .top-row {
     display: flex;
@@ -255,7 +259,7 @@ button:focus-visible {
     align-items: center;
     justify-content: center;
     gap: 8px;
-    padding: 8px 18px;
+    padding: 8px 20px;
     border-radius: var(--radius-md);
     background: var(--accent);
     color: #ffffff;
@@ -288,14 +292,14 @@ button:focus-visible {
     border-color: var(--accent);
 }
 
-/* Section Groupings & Theorem-like grids */
+/* Document Body Sections */
 .section {
     margin-top: 30px;
-    padding: 40px;
+    padding: 48px;
 }
 
 .section-head {
-    margin-bottom: 24px;
+    margin-bottom: 32px;
     border-bottom: 1px solid var(--line);
     padding-bottom: 12px;
 }
@@ -303,7 +307,7 @@ button:focus-visible {
 .section-head h2 {
     margin: 0;
     font-family: "Times New Roman", Times, Georgia, serif;
-    font-size: 1.8rem;
+    font-size: 2rem;
     font-weight: 400;
     color: var(--dark);
 }
@@ -311,25 +315,26 @@ button:focus-visible {
 .section-lead {
     margin: 6px 0 0;
     color: var(--muted);
-    font-size: 1rem;
+    font-size: 1.05rem;
 }
 
+/* High-density grid layouts tailored for screen width */
 .feature-grid,
 .skill-grid,
-.secondary-grid,
-.snapshot-grid,
-.overview-grid {
+.secondary-grid { 
     display: grid;
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr)); 
+    gap: 24px;
 }
 
-.feature-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.skill-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.secondary-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.snapshot-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.overview-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.snapshot-grid,
+.overview-grid { 
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); 
+    gap: 24px;
+}
 
-/* Report / Article Entry Cards */
+/* Dossier Entry Cards */
 .feature-card,
 .skill-card,
 .secondary-card,
@@ -349,9 +354,9 @@ button:focus-visible {
 
 .feature-card {
     display: grid;
-    grid-template-columns: 200px 1fr;
-    gap: 20px;
-    padding: 20px;
+    grid-template-columns: 240px 1fr;
+    gap: 24px;
+    padding: 24px;
 }
 
 .feature-card-wide {
@@ -391,9 +396,9 @@ button:focus-visible {
 .overview-card h3 {
     margin: 0 0 8px 0;
     font-family: "Times New Roman", Times, Georgia, serif;
-    font-size: 1.3rem;
+    font-size: 1.4rem;
     font-weight: 700;
-    line-height: 1.2;
+    line-height: 1.25;
     color: var(--dark);
 }
 
@@ -403,11 +408,11 @@ button:focus-visible {
 .overview-card p,
 .about-panel p {
     color: var(--muted);
-    font-size: 0.98rem;
+    font-size: 1rem;
     margin: 0 0 12px 0;
 }
 
-/* Subject Categorization Fields (MSC Classifications) */
+/* Subject Classifications */
 .chip-row,
 .tag-cloud {
     display: flex;
@@ -454,7 +459,7 @@ button:focus-visible {
 .about-panel,
 .callout-box,
 .text-panel {
-    padding: 24px;
+    padding: 32px;
 }
 
 .secondary-card {
@@ -490,28 +495,28 @@ button:focus-visible {
     gap: 16px;
 }
 
-/* Theorem / Lemma / Callout Block Syntax */
+/* Theorem / Block Quotation Environments */
 .callout-box {
-    margin-top: 20px;
+    margin-top: 24px;
     background: var(--surface-2);
     border-left: 4px solid var(--accent);
     font-style: italic;
     color: var(--text);
 }
 
-/* Formal Publication Dossier Subpage styling */
+/* Reference Subpages */
 .project-page {
     display: grid;
     gap: 30px;
 }
 
 .project-hero {
-    padding: 40px;
+    padding: 48px;
 }
 
 .project-hero-plain {
     background: var(--surface);
-    border-top: 4px solid #b31b1b; /* Secondary category landing color accent */
+    border-top: 4px solid #b31b1b; 
 }
 
 .project-hero-banner {
@@ -526,7 +531,7 @@ button:focus-visible {
     content: "";
     position: absolute;
     inset: 0;
-    background: linear-gradient(135deg, rgba(15, 44, 89, 0.9), rgba(10, 15, 24, 0.95));
+    background: linear-gradient(135deg, rgba(15, 44, 89, 0.92), rgba(10, 15, 24, 0.97));
 }
 
 .project-hero-banner > * {
@@ -550,16 +555,16 @@ button:focus-visible {
     border-color: rgba(255, 255, 255, 0.25);
 }
 
-/* Numerical Data Counters & Metrics */
+/* Multi-column Data Metric Rows */
 .stat-row {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 24px;
     margin-top: 24px;
 }
 
 .stat-card {
-    padding: 20px;
+    padding: 24px;
     border-radius: var(--radius-sm);
     background: var(--surface-2);
     border: 1px solid var(--line);
@@ -567,7 +572,7 @@ button:focus-visible {
 }
 
 .project-hero-banner .stat-card {
-    background: rgba(255, 255, 255, 0.08);
+    background: rgba(255, 255, 255, 0.06);
     color: #ffffff;
     border-color: rgba(255, 255, 255, 0.15);
 }
@@ -575,7 +580,7 @@ button:focus-visible {
 .stat-card strong {
     display: block;
     font-family: "Times New Roman", Times, Georgia, serif;
-    font-size: 2rem;
+    font-size: 2.4rem;
     font-weight: 400;
     line-height: 1;
     color: var(--accent);
@@ -609,11 +614,11 @@ button:focus-visible {
     border: 1px solid var(--line);
 }
 
-/* Formal PDF Preprints & Embedded Media Framework */
+/* Large Frame Displays for Preprints and Abstracts */
 .pdf-card,
 .video-card {
     overflow: hidden;
-    min-height: 650px;
+    min-height: 750px;
     box-shadow: none;
     background: var(--surface-3);
     border: 1px solid var(--line);
@@ -622,7 +627,7 @@ button:focus-visible {
 .pdf-card iframe,
 .video-card iframe {
     width: 100%;
-    height: 650px;
+    height: 750px;
     border: 0;
 }
 
@@ -636,12 +641,13 @@ button:focus-visible {
     color: var(--text);
     font-size: 1.05rem;
     line-height: 1.75;
+    max-width: 75ch; /* Keeps body text tracks optimal even on 4k screens */
 }
 
-/* Index / Footnotes area */
+/* Index / Footnotes Area */
 .site-footer {
     margin: 40px 0 20px;
-    padding: 24px;
+    padding: 32px;
     color: var(--muted);
     text-align: center;
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
@@ -649,33 +655,17 @@ button:focus-visible {
     border-top: 1px solid var(--line);
 }
 
-@media (max-width: 960px) {
-    .hero,
-    .feature-grid,
-    .skill-grid,
-    .secondary-grid,
-    .snapshot-grid,
-    .overview-grid {
+/* Strict Layout Fallbacks for Small Viewports */
+@media (max-width: 1024px) {
+    .hero {
         grid-template-columns: 1fr;
-    }
-
-    .feature-card {
-        grid-template-columns: 1fr;
-    }
-
-    .feature-thumb {
-        min-height: 220px;
-    }
-
-    .stat-row {
-        grid-template-columns: 1fr;
+        gap: 32px;
     }
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
     .site-shell {
-        width: min(100% - 24px, 1200px);
-        margin-top: 0;
+        padding: 20px 20px;
     }
 
     .site-header {
@@ -689,6 +679,10 @@ button:focus-visible {
     .section,
     .project-hero {
         padding: 24px;
+    }
+
+    .feature-card {
+        grid-template-columns: 1fr;
     }
 
     .hero-copy h1 {
@@ -706,7 +700,7 @@ button:focus-visible {
 
 .life-grid {
     display: grid;
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 20px;
     margin-bottom: 20px;
 }
@@ -744,7 +738,7 @@ button:focus-visible {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
-/* Formal Indexing & Repository Link Badges (ORCID, GitHub, etc.) */
+/* Repository Verification Links (ORCID, GitHub, Identity Registries) */
 .social-row {
     display: flex;
     flex-wrap: wrap;
